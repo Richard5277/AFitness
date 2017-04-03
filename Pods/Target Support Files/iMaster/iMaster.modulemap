@@ -1,0 +1,6 @@
+framework module iMaster {
+  umbrella header "iMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
