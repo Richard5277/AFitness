@@ -15,7 +15,6 @@ extension MainTabBarController {
         if FIRAuth.auth()?.currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }else {
-            print("Login As User: \(String(describing: FIRAuth.auth()?.currentUser?.uid))")
             fetchUser()
         }
     }
@@ -27,8 +26,8 @@ extension MainTabBarController {
         }catch let logoutError {
             print(logoutError)
         }
-//        self.user = nil
         let loginRegisterVC = LoginRegisterViewController()
+        loginRegisterVC.delegate = self
         self.present(loginRegisterVC, animated: true, completion: nil)
     }
     
@@ -40,22 +39,10 @@ extension MainTabBarController {
                 let user = User()
                 user.setValuesForKeys(dictionary)
                 self.user = user
-//                setupNavBarTitle()
             }
         }, withCancel: nil)
         
     }
-    
-//    func setupNavBarTitle(){
-//        print("Fetching User Data")
-//        if let user = FIRAuth.auth()?.currentUser {
-////            self.userImageView.loadImageUsingCacheWithUrlString(urlString: (user.photoURL?.absoluteString)!)
-////            self.userImageView.loadImageUsingCacheWithUrlString(urlString: (user.photoURL?.absoluteString)!)
-//            self.userNameLabel.text = user.displayName
-//            self.userEmailLabel.text = user.email
-//        }
-//    }
-    
     
     func setUpMenu(){
         menuView.addCustomView(logoutButton)
@@ -63,11 +50,11 @@ extension MainTabBarController {
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(56)
+            make.height.equalTo(49)
         }
         menuView.addCustomView(userImageView)
         userImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(60)
+            make.top.equalToSuperview().offset(80)
             make.left.equalToSuperview().offset(12)
             make.width.equalTo(60)
             make.height.equalTo(60)
@@ -75,7 +62,7 @@ extension MainTabBarController {
         
         menuView.addCustomView(userNameLabel)
         userNameLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(60)
+            make.top.equalToSuperview().offset(80)
             make.left.equalTo(userImageView.snp.right).offset(16)
             make.right.equalToSuperview().offset(-16)
             make.height.equalTo(26)

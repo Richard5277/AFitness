@@ -22,11 +22,15 @@ extension LoginRegisterViewController: UIImagePickerControllerDelegate, UINaviga
                 print(error ?? "ERROR")
                 return
             }
-            print("Login Success")
+            if let newUserUid: String = user?.uid {
+               print("FIRUser Uid: \(newUserUid)")
+                self.delegate?.didChangeUserWithUid(newUserUid)
+            }
             self.dismiss(animated: true, completion: nil)
         })
     }
     
+    // Need to improve Animation
     func showRegisterPage(){
         UIView.animate(withDuration: 2.6, delay: 0.6, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.aFitnessIconHeightAnchorConstrint?.constant = 0
@@ -136,6 +140,10 @@ extension LoginRegisterViewController: UIImagePickerControllerDelegate, UINaviga
                 print("Login Success")
                 // MARK: Register Facebook User into Firebase User
                 self.registerFacebookUserIntoFirebase(user)
+                if let newUserUid: String = user?.uid {
+                    print("New User Uid: \(newUserUid)")
+                    self.delegate?.didChangeUserWithUid(newUserUid)
+                }
                 self.dismiss(animated: true, completion: nil)
             })
         }

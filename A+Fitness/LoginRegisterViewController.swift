@@ -12,7 +12,13 @@ import SnapKit
 import Firebase
 import FBSDKLoginKit
 
+protocol DidChangeUserDelegate {
+    func didChangeUserWithUid(_ uid: String)
+}
+
 class LoginRegisterViewController: UIViewController,FBSDKLoginButtonDelegate {
+    
+    var delegate: DidChangeUserDelegate? = nil
     
     let ref = FIRDatabase.database().reference()
     

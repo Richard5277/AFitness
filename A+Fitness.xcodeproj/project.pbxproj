@@ -20,6 +20,11 @@
 		AA2BB0BC1E91D81E00128148 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0BB1E91D81E00128148 /* ScheduleViewController.swift */; };
 		AA2BB0BE1E91DE6500128148 /* LoginRegiterControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */; };
 		AA2BB0C11E920AC000128148 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0C01E920AC000128148 /* User.swift */; };
+		AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C61E92A50A00665B6F /* CategoryCell.swift */; };
+		AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */; };
+		AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */; };
+		AAF116CD1E92AF1B00665B6F /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CC1E92AF1B00665B6F /* HeaderCell.swift */; };
+		AAF116CF1E92B15300665B6F /* DetailCagetoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRegiterControllerExtension.swift; sourceTree = "<group>"; };
 		AA2BB0BF1E92020200128148 /* A+Fitness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "A+Fitness.entitlements"; sourceTree = "<group>"; };
 		AA2BB0C01E920AC000128148 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AAF116C61E92A50A00665B6F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
+		AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryCell.swift; sourceTree = "<group>"; };
+		AAF116CC1E92AF1B00665B6F /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCagetoryView.swift; sourceTree = "<group>"; };
 		D180EB7D4EB918F7C767D64F /* Pods_A_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +124,10 @@
 		AA2BB0AC1E91D62E00128148 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAF116C61E92A50A00665B6F /* CategoryCell.swift */,
+				AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */,
+				AAF116CC1E92AF1B00665B6F /* HeaderCell.swift */,
+				AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -124,6 +138,7 @@
 				AA2BB0B11E91D69800128148 /* MainTabbarController.swift */,
 				AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */,
 				AA2BB0B91E91D7F000128148 /* CategoriesViewController.swift */,
+				AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */,
 				AA2BB0BB1E91D81E00128148 /* ScheduleViewController.swift */,
 			);
 			name = Controller;
@@ -281,14 +296,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2BB0B61E91D73400128148 /* LoginRegisterViewController.swift in Sources */,
+				AAF116CF1E92B15300665B6F /* DetailCagetoryView.swift in Sources */,
 				AA2BB0B41E91D70100128148 /* MainTabbarControllerExtension.swift in Sources */,
 				AA2BB0BC1E91D81E00128148 /* ScheduleViewController.swift in Sources */,
 				AA1DB8CB1E91D18D000CF59F /* AppDelegate.swift in Sources */,
+				AAF116CD1E92AF1B00665B6F /* HeaderCell.swift in Sources */,
+				AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */,
 				AA2BB0BE1E91DE6500128148 /* LoginRegiterControllerExtension.swift in Sources */,
 				AA2BB0C11E920AC000128148 /* User.swift in Sources */,
 				AA2BB0B21E91D69800128148 /* MainTabbarController.swift in Sources */,
 				AA2BB0BA1E91D7F000128148 /* CategoriesViewController.swift in Sources */,
+				AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */,
 				AA2BB0B81E91D7A800128148 /* Helper.swift in Sources */,
+				AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,6 +62,9 @@ struct myColor {
     // Theme One
     static var lightRed: UIColor = UIColor(r: 253, g: 79, b: 94, a: 1)
     static var lightOrange: UIColor = UIColor(r: 236, g: 90, b: 65, a: 1)
+    
+    // Dark Theme
+    static var bgBlack: UIColor = UIColor(r: 16, g: 17, b: 19, a: 1)
 }
 
 extension UIViewController {

@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 import SnapKit
 
-class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate, DidChangeUserDelegate {
+   
+    let ref = FIRDatabase.database().reference()
     
     var user: User?{
         didSet {
@@ -20,6 +22,20 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
+    func didChangeUserWithUid(_ uid: String) {
+        print("Did ")
+        FIRDatabase.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapShot) in
+                if let dictionary = snapShot.value as? [String: AnyObject] {
+                    let user = User()
+                    user.setValuesForKeys(dictionary)
+//                    self.userImageView.image = nil
+//                    self.userNameLabel.text = nil
+//                    self.userEmailLabel.text = nil
+                    self.user = user
+                }
+            }, withCancel: nil)
+    }
+
     var isMenuShow: Bool = false
     let windowFrame = UIApplication.shared.keyWindow?.bounds ?? UIWindow().bounds
     
@@ -33,26 +49,25 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 30
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .yellow
         return imageView
     }()
     
     let userNameLabel: UILabel = {
         let label = UILabel()
+        label.textColor = myColor.textWhite
         label.layer.cornerRadius = 6
         label.textAlignment = .left
         label.layer.masksToBounds = true
-        label.backgroundColor = .yellow
         return label
     }()
     
     let userEmailLabel: UILabel = {
         let label = UILabel()
+        label.textColor = myColor.textWhite
         label.font = UIFont.systemFont(ofSize: 9)
         label.layer.cornerRadius = 6
         label.textAlignment = .left
         label.layer.masksToBounds = true
-        label.backgroundColor = .yellow
         return label
     }()
     
@@ -100,18 +115,13 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         navigationItem.leftBarButtonItem = menu
         
         setUpTabBar()
-        
+        checkLogIn()
         setUpMenu()
         
         for item in tabBar.items! {
             item.setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)], for: .normal)
         }
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        checkLogIn()
     }
     
     fileprivate func setUpTabBar(){
