@@ -27,7 +27,7 @@ class CategoryCell: BaseCollectionVewCell {
     }()
     
     override func setUpView() {
-        
+        backgroundColor = myColor.bgBlack
         categoryImageView.contentMode = .scaleAspectFill
         categoryImageView.layer.masksToBounds = true
         

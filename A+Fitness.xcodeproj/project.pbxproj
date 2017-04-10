@@ -12,14 +12,21 @@
 		AA1DB8D21E91D18D000CF59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1DB8D11E91D18D000CF59F /* Assets.xcassets */; };
 		AA1DB8D51E91D18D000CF59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1DB8D31E91D18D000CF59F /* LaunchScreen.storyboard */; };
 		AA1DB8DD1E91D30A000CF59F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1DB8DC1E91D30A000CF59F /* GoogleService-Info.plist */; };
-		AA2BB0B21E91D69800128148 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0B11E91D69800128148 /* MainTabbarController.swift */; };
-		AA2BB0B41E91D70100128148 /* MainTabbarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0B31E91D70100128148 /* MainTabbarControllerExtension.swift */; };
 		AA2BB0B61E91D73400128148 /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */; };
 		AA2BB0B81E91D7A800128148 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0B71E91D7A800128148 /* Helper.swift */; };
-		AA2BB0BA1E91D7F000128148 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0B91E91D7F000128148 /* CategoriesViewController.swift */; };
-		AA2BB0BC1E91D81E00128148 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0BB1E91D81E00128148 /* ScheduleViewController.swift */; };
 		AA2BB0BE1E91DE6500128148 /* LoginRegiterControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */; };
 		AA2BB0C11E920AC000128148 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB0C01E920AC000128148 /* User.swift */; };
+		AA58B7411E9728B600E5E0E5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B7401E9728B600E5E0E5 /* HomeController.swift */; };
+		AA58B7431E9729A000E5E0E5 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B7421E9729A000E5E0E5 /* MenuBar.swift */; };
+		AA58B7471E972A2D00E5E0E5 /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B7461E972A2D00E5E0E5 /* MenuCollectionCell.swift */; };
+		AA58B7491E972BD000E5E0E5 /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B7481E972BD000E5E0E5 /* SettingLauncher.swift */; };
+		AA58B74B1E972CFB00E5E0E5 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74A1E972CFB00E5E0E5 /* SettingCell.swift */; };
+		AA58B74D1E972DD200E5E0E5 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */; };
+		AA58B74F1E97323500E5E0E5 /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74E1E97323500E5E0E5 /* CategoriesCell.swift */; };
+		AA82C4131E97F9320052F02D /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4121E97F9320052F02D /* PieChartView.swift */; };
+		AA82C4161E97FA3A0052F02D /* HomeController+PieChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */; };
+		AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4171E98075C0052F02D /* HomeExtension.swift */; };
+		AA82C41A1E9807F60052F02D /* Home+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4191E9807F60052F02D /* Home+Setting.swift */; };
 		AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C61E92A50A00665B6F /* CategoryCell.swift */; };
 		AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */; };
 		AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */; };
@@ -36,15 +43,22 @@
 		AA1DB8D41E91D18D000CF59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1DB8D61E91D18D000CF59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA1DB8DC1E91D30A000CF59F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AA2BB0B11E91D69800128148 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
-		AA2BB0B31E91D70100128148 /* MainTabbarControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarControllerExtension.swift; sourceTree = "<group>"; };
 		AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
 		AA2BB0B71E91D7A800128148 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		AA2BB0B91E91D7F000128148 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		AA2BB0BB1E91D81E00128148 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRegiterControllerExtension.swift; sourceTree = "<group>"; };
 		AA2BB0BF1E92020200128148 /* A+Fitness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "A+Fitness.entitlements"; sourceTree = "<group>"; };
 		AA2BB0C01E920AC000128148 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA58B7401E9728B600E5E0E5 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		AA58B7421E9729A000E5E0E5 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		AA58B7461E972A2D00E5E0E5 /* MenuCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
+		AA58B7481E972BD000E5E0E5 /* SettingLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingLauncher.swift; sourceTree = "<group>"; };
+		AA58B74A1E972CFB00E5E0E5 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		AA58B74E1E97323500E5E0E5 /* CategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		AA82C4121E97F9320052F02D /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeController+PieChatView.swift"; sourceTree = "<group>"; };
+		AA82C4171E98075C0052F02D /* HomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExtension.swift; sourceTree = "<group>"; };
+		AA82C4191E9807F60052F02D /* Home+Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home+Setting.swift"; sourceTree = "<group>"; };
 		AAF116C61E92A50A00665B6F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
 		AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryCell.swift; sourceTree = "<group>"; };
@@ -106,9 +120,9 @@
 				AA2BB0BF1E92020200128148 /* A+Fitness.entitlements */,
 				AA2BB0B01E91D64A00128148 /* Other */,
 				AA2BB0AB1E91D62800128148 /* Module */,
-				AA2BB0AD1E91D63500128148 /* Controller */,
-				AA2BB0AE1E91D63B00128148 /* Extension */,
-				AA2BB0AC1E91D62E00128148 /* View */,
+				AA82C4141E97FA1F0052F02D /* Extension */,
+				AA58B7451E9729C600E5E0E5 /* View */,
+				AA58B7441E9729BE00E5E0E5 /* Controller */,
 			);
 			path = "A+Fitness";
 			sourceTree = "<group>";
@@ -121,39 +135,6 @@
 			name = Module;
 			sourceTree = "<group>";
 		};
-		AA2BB0AC1E91D62E00128148 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAF116C61E92A50A00665B6F /* CategoryCell.swift */,
-				AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */,
-				AAF116CC1E92AF1B00665B6F /* HeaderCell.swift */,
-				AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		AA2BB0AD1E91D63500128148 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AA2BB0B11E91D69800128148 /* MainTabbarController.swift */,
-				AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */,
-				AA2BB0B91E91D7F000128148 /* CategoriesViewController.swift */,
-				AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */,
-				AA2BB0BB1E91D81E00128148 /* ScheduleViewController.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		AA2BB0AE1E91D63B00128148 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				AA2BB0B71E91D7A800128148 /* Helper.swift */,
-				AA2BB0B31E91D70100128148 /* MainTabbarControllerExtension.swift */,
-				AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */,
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
 		AA2BB0B01E91D64A00128148 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +145,46 @@
 				AA1DB8CA1E91D18D000CF59F /* AppDelegate.swift */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		AA58B7441E9729BE00E5E0E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */,
+				AA58B7401E9728B600E5E0E5 /* HomeController.swift */,
+				AA58B7481E972BD000E5E0E5 /* SettingLauncher.swift */,
+				AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AA58B7451E9729C600E5E0E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA82C4121E97F9320052F02D /* PieChartView.swift */,
+				AA58B7421E9729A000E5E0E5 /* MenuBar.swift */,
+				AA58B7461E972A2D00E5E0E5 /* MenuCollectionCell.swift */,
+				AA58B74A1E972CFB00E5E0E5 /* SettingCell.swift */,
+				AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */,
+				AA58B74E1E97323500E5E0E5 /* CategoriesCell.swift */,
+				AAF116C61E92A50A00665B6F /* CategoryCell.swift */,
+				AAF116CC1E92AF1B00665B6F /* HeaderCell.swift */,
+				AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */,
+				AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA82C4141E97FA1F0052F02D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BB0B71E91D7A800128148 /* Helper.swift */,
+				AA2BB0BD1E91DE6500128148 /* LoginRegiterControllerExtension.swift */,
+				AA82C4171E98075C0052F02D /* HomeExtension.swift */,
+				AA82C4191E9807F60052F02D /* Home+Setting.swift */,
+				AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,18 +318,25 @@
 			files = (
 				AA2BB0B61E91D73400128148 /* LoginRegisterViewController.swift in Sources */,
 				AAF116CF1E92B15300665B6F /* DetailCagetoryView.swift in Sources */,
-				AA2BB0B41E91D70100128148 /* MainTabbarControllerExtension.swift in Sources */,
-				AA2BB0BC1E91D81E00128148 /* ScheduleViewController.swift in Sources */,
+				AA58B7431E9729A000E5E0E5 /* MenuBar.swift in Sources */,
+				AA82C41A1E9807F60052F02D /* Home+Setting.swift in Sources */,
+				AA82C4131E97F9320052F02D /* PieChartView.swift in Sources */,
 				AA1DB8CB1E91D18D000CF59F /* AppDelegate.swift in Sources */,
 				AAF116CD1E92AF1B00665B6F /* HeaderCell.swift in Sources */,
 				AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */,
 				AA2BB0BE1E91DE6500128148 /* LoginRegiterControllerExtension.swift in Sources */,
+				AA82C4161E97FA3A0052F02D /* HomeController+PieChatView.swift in Sources */,
+				AA58B74B1E972CFB00E5E0E5 /* SettingCell.swift in Sources */,
 				AA2BB0C11E920AC000128148 /* User.swift in Sources */,
-				AA2BB0B21E91D69800128148 /* MainTabbarController.swift in Sources */,
-				AA2BB0BA1E91D7F000128148 /* CategoriesViewController.swift in Sources */,
 				AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */,
+				AA58B74D1E972DD200E5E0E5 /* ScheduleCell.swift in Sources */,
+				AA58B74F1E97323500E5E0E5 /* CategoriesCell.swift in Sources */,
 				AA2BB0B81E91D7A800128148 /* Helper.swift in Sources */,
 				AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */,
+				AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */,
+				AA58B7471E972A2D00E5E0E5 /* MenuCollectionCell.swift in Sources */,
+				AA58B7491E972BD000E5E0E5 /* SettingLauncher.swift in Sources */,
+				AA58B7411E9728B600E5E0E5 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

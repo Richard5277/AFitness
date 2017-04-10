@@ -65,6 +65,10 @@ struct myColor {
     
     // Dark Theme
     static var bgBlack: UIColor = UIColor(r: 16, g: 17, b: 19, a: 1)
+    
+    //piechart 
+    static var arrowViewWhiteNormal: UIColor = UIColor(r: 250, g: 250, b: 250, a: 0.2)
+    static var arrowViewWhiteHighlighted: UIColor = UIColor(r: 250, g: 250, b: 250, a: 0.8)
 }
 
 extension UIViewController {
