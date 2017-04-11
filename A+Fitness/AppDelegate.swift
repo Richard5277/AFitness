@@ -12,35 +12,7 @@ import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-//    var window: UIWindow?
-//    
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        
-//        FIRApp.configure()
-//        
-//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        
-//        let rootView = MainTabBarController()
-//        rootView.selectedIndex = 0
-//        let mainNav = UINavigationController(rootViewController: rootView)
-//        
-//        mainNav.navigationBar.tintColor = myColor.textWhite
-//        mainNav.navigationBar.barTintColor = UIColor(r: 0, g: 0, b: 0, a: 0)
-//        mainNav.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: myColor.textWhite]
-//        mainNav.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        mainNav.navigationBar.shadowImage = UIImage()
-//        mainNav.hidesBarsOnSwipe = true
-//        
-//        
-//        window?.rootViewController = mainNav
-//        UIApplication.shared.statusBarStyle = .lightContent
-//        return true
-//    }
-    
+
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

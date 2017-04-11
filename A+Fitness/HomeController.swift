@@ -26,7 +26,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     let arrowView: UIView = {
         let view = UIView()
-        view.backgroundColor = myColor.arrowViewWhiteNormal
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.2)
         view.layer.cornerRadius = 33
         view.layer.masksToBounds = true
         return view
@@ -60,7 +60,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return settingsLauncher
     }()
     
-    lazy var arrowRightImageView: UIImageView = {
+    let arrowRightImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "arrow_right").resizeToWidth(18).withRenderingMode(.alwaysOriginal))
 //        imageView.backgroundColor = .red
 //        imageView.layer.contentsRect = CGRect(x: -100, y: -100, width: 100, height: 100)
@@ -69,7 +69,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return imageView
     }()
     
-    lazy var arrowLeftImageView: UIImageView = {
+    let arrowLeftImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "arrow_left").resizeToWidth(18).withRenderingMode(.alwaysOriginal))
 //        imageView.backgroundColor = .red
 //        imageView.layer.contentsRect = CGRect(x: -100, y: -100, width: 136, height: 100)

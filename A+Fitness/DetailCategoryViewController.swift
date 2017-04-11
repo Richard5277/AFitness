@@ -14,14 +14,14 @@ class DetailCategoryViewController: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = myColor.white
+        view.backgroundColor = myColor.lightGray
         return view
     }()
     let detailCategoryView: DetailCategoryView = DetailCategoryView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view?.backgroundColor = .clear
+        view?.backgroundColor = myColor.lightGray
         setUpView()
     }
     override func viewWillAppear(_ animated: Bool) {

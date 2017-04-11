@@ -15,7 +15,7 @@ extension HomeController {
     func setUpArrowView(){
         let viewWidth: CGFloat = self.view.frame.width
         let viewHeight: CGFloat = self.view.frame.height
-        self.arrowView.frame = CGRect(x: viewWidth - 33, y: viewHeight - 145, width: 66.0, height: 66.0)
+        self.arrowView.frame = CGRect(x: viewWidth - 33, y: viewHeight - 210, width: 66.0, height: 66.0)
         
         arrowView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changePage)))
         

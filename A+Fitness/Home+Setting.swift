@@ -11,7 +11,7 @@ import UIKit
 extension HomeController {
     
     func handleMore(){
-        settingsLancher.showSettings()
+        self.settingsLancher.showSettings()
     }
     
     func showDetailViewForSetting(_ setting: Setting){
