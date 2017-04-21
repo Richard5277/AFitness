@@ -16,11 +16,8 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
     let scheduleCellId = "scheduleCellId"
     
     var onceOnly = false
-    
 
     let calendar = Calendar.current
-    
-//    let weekdayNames = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
     
     let weekdayCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,15 +28,12 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
         return collectionView
     }()
     
-    let scheduleView: UIView = {
-        let view = UIView()
-        view.backgroundColor = myColor.bgBlack
-        return view
-    }()
-    
     let scheduleCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = myColor.lightBlack
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = myColor.bgBlack
+        collectionView.isPagingEnabled = true
         return collectionView
     }()
     
@@ -59,23 +53,15 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             make.top.equalToSuperview().offset(5)
             make.width.equalToSuperview().offset(-24)
             make.centerX.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(60)
         }
         
-        addCustomView(scheduleView)
-        scheduleView.snp.makeConstraints { (make) in
-            make.top.equalTo(weekdayCollectionView.snp.bottom)
-            make.width.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-        
-        scheduleView.addCustomView(scheduleCollectionView)
+        addCustomView(scheduleCollectionView)
         scheduleCollectionView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(12)
-            make.right.equalToSuperview().offset(-8)
-            make.bottom.equalToSuperview().offset(-12)
-            make.left.equalToSuperview().offset(8)
+            make.top.equalTo(weekdayCollectionView.snp.bottom)
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
     }
@@ -85,31 +71,29 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
         let indexToScrollTo = IndexPath(item: row, section: 0)
         
         if !onceOnly {
-            self.weekdayCollectionView.scrollToItem(at: indexToScrollTo, at: .left, animated: true)
+            self.weekdayCollectionView.scrollToItem(at: indexToScrollTo, at: .left, animated: false)
+            scheduleCollectionView.scrollToItem(at: indexToScrollTo, at: UICollectionViewScrollPosition.left, animated: false)
             onceOnly = true
         }
         let currentCell =  weekdayCollectionView.cellForItem(at: indexToScrollTo) as? WeekdayCell
         currentCell?.weekdayLabel.backgroundColor = myColor.lightOrange
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.weekdayCollectionView {
-            let numDays = numberOfDaysInThisMonth()
-            return numDays
-        } else {
-            return 3
-        }
+        let numDays = numberOfDaysInThisMonth()
+        return numDays
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var dayNumberCollection:[Int] = []
+        let numDays = numberOfDaysInThisMonth()
+        for dayNumber in 1...numDays {
+            dayNumberCollection.append(dayNumber)
+        }
+        
         if collectionView == self.weekdayCollectionView {
-            var dayNumberCollection:[Int] = []
-            let numDays = numberOfDaysInThisMonth()
-            for dayNumber in 1...numDays {
-                dayNumberCollection.append(dayNumber)
-            }
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekdayCellId, for: indexPath) as! WeekdayCell
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekdayCellId, for: indexPath) as! WeekdayCell
             cell.weekdayLabel.text = String(dayNumberCollection[indexPath.item])
             
             if indexPath.item == currentDayInThisMonth() - 1 {
@@ -119,17 +103,14 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scheduleCellId, for: indexPath) as! ScheduleCollectionCell
-            cell.backgroundColor = myColor.textWhite
+            cell.backgroundColor = myColor.yellow
+            cell.dayLabel.text = String(dayNumberCollection[indexPath.item])
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == self.weekdayCollectionView {
-            return 0
-        } else {
-            return 12
-        }
+        return 0
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -141,7 +122,7 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             return CGSize(width: (frame.width - 24) / 5, height: 60)
         }
         else{
-           return CGSize(width: frame.width, height: 120)
+           return CGSize(width: frame.width, height: frame.height - 76)
         }
     }
     
@@ -156,10 +137,12 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             currentCell.isSelected = true
         }
         
+        scheduleCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let fomerCell =  weekdayCollectionView.cellForItem(at: indexPath) as! WeekdayCell
+        guard let fomerCell =  weekdayCollectionView.cellForItem(at: indexPath) as? WeekdayCell else { return }
         
         if indexPath.item == currentDayInThisMonth() - 1 {
             print("Check Other Day's Workout.")
@@ -168,6 +151,24 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
         }else {
             fomerCell.isSelected = false
         }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = scheduleCollectionView.contentOffset
+        visibleRect.size = scheduleCollectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        let visibleIndexPath: IndexPath = scheduleCollectionView.indexPathForItem(at: visiblePoint)!
+        
+//        let dayNumber: Int = visibleIndexPath.last!
+//        print(dayNumber)
+        
+        weekdayCollectionView.scrollToItem(at: visibleIndexPath, at: .centeredHorizontally, animated: true)
+        weekdayCollectionView.selectItem(at: visibleIndexPath, animated: true, scrollPosition: .centeredHorizontally)
+        
     }
   
     private func numberOfDaysInThisMonth() -> Int {
