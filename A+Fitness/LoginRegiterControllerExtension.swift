@@ -116,7 +116,7 @@ extension LoginRegisterViewController: UIImagePickerControllerDelegate, UINaviga
         print("Custom Facebook Login Working")
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) {(result, err) in
             if err != nil{
-                print("Read User Info Error: \(err)")
+                print("Read User Info Error: \(String(describing: err))")
                 return
             }
             print("Login With Facebook Successfully")
@@ -127,14 +127,14 @@ extension LoginRegisterViewController: UIImagePickerControllerDelegate, UINaviga
     func loginFirebaseWithFacebook(){
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start{(connection, result, err) in
             if err != nil{
-                print("Failed to start request: \(err)")
+                print("Failed to start request: \(String(describing: err))")
                 return
             }
             guard let accessToken = FBSDKAccessToken.current().tokenString else { return }
             let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessToken)
             FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
                 if error != nil{
-                    print("Sign In Firebase Error: \(error)")
+                    print("Sign In Firebase Error: \(String(describing: error))")
                     return
                 }
                 print("Login Success")
@@ -173,7 +173,7 @@ extension LoginRegisterViewController: UIImagePickerControllerDelegate, UINaviga
                     if let uploadData = UIImageJPEGRepresentation(downloadedImage, 0.1){
                         storage.put(uploadData, metadata: nil, completion: { (metadata, error) in
                             if error != nil{
-                                print("Upload Facebook Profile Image to Firebase Storage Failed: \(error)")
+                                print("Upload Facebook Profile Image to Firebase Storage Failed: \(String(describing: error))")
                                 return
                             }
                             print("Save Facebook Image Into Firebase Success, imageName: \(imageName)")

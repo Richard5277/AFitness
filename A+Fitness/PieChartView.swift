@@ -38,8 +38,8 @@ class PieChart : UIView {
     private func drawSlice(rect: CGRect, startPercent: CGFloat, endPercent: CGFloat, color: UIColor) {
         let center = CGPoint(x: rect.origin.x + rect.width / 2, y: rect.origin.y + rect.height / 2)
         let radius = min(rect.width, rect.height) / 2
-        let startAngle = startPercent / 100 * CGFloat(M_PI) * 2 - CGFloat(M_PI)
-        let endAngle = endPercent / 100 * CGFloat(M_PI) * 2 - CGFloat(M_PI)
+        let startAngle = startPercent / 100 * .pi * 2 - .pi
+        let endAngle = endPercent / 100 * .pi * 2 - .pi
         let path = UIBezierPath()
         path.move(to: center)
         path.addArc(withCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)

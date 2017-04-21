@@ -15,7 +15,7 @@ class CategoriesCell: BaseCollectionVewCell, UICollectionViewDataSource, UIColle
     
     var homeViewController: HomeController?
     
-    fileprivate let categoryImaegNames: [String] = ["CHEST", "STRECHING", "CARDIO", "LEGS", "BICEPS", "TRICEPS"]
+    fileprivate let categoryImaegNames: [String] = ["CHEST", "STRETCHING", "CARDIO", "LEGS", "BICEPS", "TRICEPS"]
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

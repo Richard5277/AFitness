@@ -12,12 +12,14 @@ import SnapKit
 
 class WeekdayCell: BaseCollectionVewCell {
     
-    let weekdayLabel: UILabel = {
+    lazy var weekdayLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16)
         label.backgroundColor = .clear
         label.textColor = myColor.textWhite
+        label.layer.cornerRadius = 20
+        label.layer.masksToBounds = true
         return label
     }()
     
@@ -32,8 +34,8 @@ class WeekdayCell: BaseCollectionVewCell {
         weekdayLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
-            make.width.equalToSuperview().offset(-12)
-            make.height.equalToSuperview().offset(-8)
+            make.width.equalTo(40)
+            make.height.equalTo(40)
         }
         
         addCustomView(separatorView)
@@ -44,4 +46,15 @@ class WeekdayCell: BaseCollectionVewCell {
             make.centerY.equalToSuperview()
         }
     }
+    
+    override var isSelected: Bool {
+        
+        didSet {
+            self.weekdayLabel.backgroundColor = isSelected ? myColor.yellow : UIColor.black
+            self.weekdayLabel.textColor = isSelected ? myColor.black : myColor.textWhite
+        }
+        
+    }
+
+
 }

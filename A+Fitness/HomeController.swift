@@ -62,19 +62,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     let arrowRightImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "arrow_right").resizeToWidth(18).withRenderingMode(.alwaysOriginal))
-//        imageView.backgroundColor = .red
-//        imageView.layer.contentsRect = CGRect(x: -100, y: -100, width: 100, height: 100)
-//        imageView.isUserInteractionEnabled = true
-//        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSchedule)))
         return imageView
     }()
     
     let arrowLeftImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "arrow_left").resizeToWidth(18).withRenderingMode(.alwaysOriginal))
-//        imageView.backgroundColor = .red
-//        imageView.layer.contentsRect = CGRect(x: -100, y: -100, width: 136, height: 100)
-//        imageView.isUserInteractionEnabled = true
-//        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCategories)))
         return imageView
     }()
     

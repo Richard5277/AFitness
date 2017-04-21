@@ -28,6 +28,7 @@
 		AA82C4161E97FA3A0052F02D /* HomeController+PieChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */; };
 		AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4171E98075C0052F02D /* HomeExtension.swift */; };
 		AA82C41A1E9807F60052F02D /* Home+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4191E9807F60052F02D /* Home+Setting.swift */; };
+		AA91B9EB1EA96919000C77A0 /* ScheduleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91B9EA1EA96919000C77A0 /* ScheduleCollectionCell.swift */; };
 		AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C61E92A50A00665B6F /* CategoryCell.swift */; };
 		AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */; };
 		AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */; };
@@ -61,6 +62,7 @@
 		AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeController+PieChatView.swift"; sourceTree = "<group>"; };
 		AA82C4171E98075C0052F02D /* HomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExtension.swift; sourceTree = "<group>"; };
 		AA82C4191E9807F60052F02D /* Home+Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home+Setting.swift"; sourceTree = "<group>"; };
+		AA91B9EA1EA96919000C77A0 /* ScheduleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionCell.swift; sourceTree = "<group>"; };
 		AAF116C61E92A50A00665B6F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
 		AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryCell.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				AAF116CE1E92B15300665B6F /* DetailCagetoryView.swift */,
 				AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */,
 				AA558D541E9C1B7A0045E28D /* WeekdayCell.swift */,
+				AA91B9EA1EA96919000C77A0 /* ScheduleCollectionCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -225,7 +228,7 @@
 				TargetAttributes = {
 					AA1DB8C61E91D18D000CF59F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = H38GM3B5JP;
+						DevelopmentTeam = UN29KXT735;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -322,6 +325,7 @@
 				AA2BB0B61E91D73400128148 /* LoginRegisterViewController.swift in Sources */,
 				AAF116CF1E92B15300665B6F /* DetailCagetoryView.swift in Sources */,
 				AA58B7431E9729A000E5E0E5 /* MenuBar.swift in Sources */,
+				AA91B9EB1EA96919000C77A0 /* ScheduleCollectionCell.swift in Sources */,
 				AA82C41A1E9807F60052F02D /* Home+Setting.swift in Sources */,
 				AA82C4131E97F9320052F02D /* PieChartView.swift in Sources */,
 				AA1DB8CB1E91D18D000CF59F /* AppDelegate.swift in Sources */,
@@ -457,8 +461,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "A+Fitness/A+Fitness.entitlements";
-				DEVELOPMENT_TEAM = H38GM3B5JP;
+				DEVELOPMENT_TEAM = UN29KXT735;
 				INFOPLIST_FILE = "A+Fitness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feihongdesign.www.AFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,8 +477,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "A+Fitness/A+Fitness.entitlements";
-				DEVELOPMENT_TEAM = H38GM3B5JP;
+				DEVELOPMENT_TEAM = UN29KXT735;
 				INFOPLIST_FILE = "A+Fitness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feihongdesign.www.AFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
