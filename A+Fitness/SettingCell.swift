@@ -31,7 +31,8 @@ class SettingCell: BaseCollectionVewCell {
     
     let settingLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: 0.1)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .left
         return label
     }()
     
@@ -43,6 +44,7 @@ class SettingCell: BaseCollectionVewCell {
     
     override func setUpView() {
         super.setUpView()
+        backgroundColor = UIColor(r: 253, g: 253, b: 253, a: 0.85)
         
         addSubview(settingIcon)
         settingIcon.snp.makeConstraints { (make) in
@@ -54,17 +56,17 @@ class SettingCell: BaseCollectionVewCell {
         
         addSubview(settingLabel)
         settingLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(settingIcon.snp.right).offset(8)
+            make.left.equalTo(settingIcon.snp.right).offset(32)
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().offset(-8)
-            make.height.equalTo(50)
+            make.height.equalToSuperview()
         }
         
         addSubview(seperator)
         seperator.snp.makeConstraints { (make) in
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.height.equalTo(1)
+            make.height.equalTo(0.6)
             make.width.equalToSuperview()
         }
     }

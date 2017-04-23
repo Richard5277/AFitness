@@ -12,16 +12,16 @@ import iMaster
 
 class DetailCategoryViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = myColor.lightGray
-        return view
-    }()
+//    let containerView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .purple
+//        return view
+//    }()
+    
     let detailCategoryView: DetailCategoryView = DetailCategoryView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view?.backgroundColor = myColor.lightGray
         setUpView()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -38,14 +38,16 @@ class DetailCategoryViewController: UIViewController {
         
     }
     func setUpView(){
-        view.addCustomView(containerView)
-        containerView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview()
-        }
-        containerView.addCustomView(detailCategoryView)
+        
+//        view.addCustomView(containerView)
+//        containerView.snp.makeConstraints { (make) in
+//            make.top.equalToSuperview()
+//            make.right.equalToSuperview()
+//            make.bottom.equalToSuperview()
+//            make.left.equalToSuperview()
+//        }
+        
+        view.addCustomView(detailCategoryView)
         detailCategoryView.snp.makeConstraints { (mk) in
             mk.top.equalToSuperview()
             mk.right.equalToSuperview()

@@ -20,18 +20,16 @@ class Setting: NSObject {
 //MARK: using enumuration to avoid string value condition check
 enum SettingName: String {
     case cancel = "Cancel"
-    case setting = "Setting"
-    case home = "Home"
-    case terms = "Terms & Policies"
-    case feedback = "Feedback"
-    case help = "Help"
+    case logout = "Logout"
 }
 
 class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let settingCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.3)
+        collectionView.layer.cornerRadius = 12
+        collectionView.layer.masksToBounds = true
         return collectionView
     }()
     
@@ -39,17 +37,9 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
     
     let settings:[Setting] = {
         var settings = [Setting]()
-        
-        let settingCell = Setting(name: .setting, iconName: "setting")
-        settings.append(settingCell)
-        let homeCell = Setting(name: .home, iconName: "setting")
-        settings.append(homeCell)
-        let termsCell = Setting(name: .terms, iconName: "setting")
-        settings.append(termsCell)
-        let helpCell = Setting(name: .help, iconName: "setting")
-        settings.append(helpCell)
-        let feedbackCell = Setting(name: .feedback, iconName: "setting")
-        settings.append(feedbackCell)
+
+        let logoutCell = Setting(name: .logout, iconName: "setting")
+        settings.append(logoutCell)
         let cancelCell = Setting(name: .cancel, iconName: "setting")
         settings.append(cancelCell)
         
@@ -58,7 +48,7 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
     
     let blackView = UIView()
     
-    let height: CGFloat = 300 //MARK: cg for core graphic
+    let height: CGFloat = 80 //MARK: cg for core graphic
     
     override init(){
         super.init()
@@ -79,9 +69,9 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
             blackView.alpha = 0
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissSettings)))
             
-            let yPosition = window.frame.height - height
+            let yPosition = window.frame.height - height - 8
             window.addSubview(settingCollectionView)
-            settingCollectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+            settingCollectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height + 16)
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
@@ -101,7 +91,10 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
             }
         }) { (true) in
             //MARK: Never check the conditon of a string value !!!
-            if setting.name != .cancel && setting.name.rawValue != ""  {
+            if setting.name == .logout {
+                self.homeController?.handleLogout()
+            }
+            else if setting.name != .cancel && setting.name.rawValue != ""  {
                 self.homeController?.showDetailViewForSetting(setting)
             }
         }
@@ -116,16 +109,18 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SettingCell
         cell.setting = settings[indexPath.row]
+        cell.layer.cornerRadius = 12
+        cell.layer.masksToBounds = true
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = 300 / CGFloat(settings.count)
+        let height: CGFloat = 80 / CGFloat(settings.count)
         return CGSize(width: collectionView.frame.width, height: height )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

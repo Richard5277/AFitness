@@ -27,6 +27,7 @@ class DetailCategoryCell: BaseCollectionVewCell, UICollectionViewDelegate, UICol
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = myColor.bgBlack
         return collectionView
     }()
     
@@ -46,10 +47,10 @@ class DetailCategoryCell: BaseCollectionVewCell, UICollectionViewDelegate, UICol
         
         self.addCustomView(videosCollectionView)
         videosCollectionView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(26)
+            make.top.equalTo(subCategoryLabel.snp.bottom)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(self.frame.width / 16 * 9)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -59,17 +60,13 @@ class DetailCategoryCell: BaseCollectionVewCell, UICollectionViewDelegate, UICol
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: videoCell, for: indexPath)
-        cell.backgroundColor = myColor.yellow
+        cell.backgroundColor = myColor.lightYellow
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Play Video")
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 64
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16

@@ -29,6 +29,7 @@
 		AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4171E98075C0052F02D /* HomeExtension.swift */; };
 		AA82C41A1E9807F60052F02D /* Home+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4191E9807F60052F02D /* Home+Setting.swift */; };
 		AA91B9EB1EA96919000C77A0 /* ScheduleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91B9EA1EA96919000C77A0 /* ScheduleCollectionCell.swift */; };
+		AA9AE3B51EAC16E400099EE5 /* Home + Login_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE3B41EAC16E400099EE5 /* Home + Login_Extension.swift */; };
 		AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C61E92A50A00665B6F /* CategoryCell.swift */; };
 		AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */; };
 		AAF116CB1E92AED400665B6F /* DetailCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */; };
@@ -63,6 +64,7 @@
 		AA82C4171E98075C0052F02D /* HomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExtension.swift; sourceTree = "<group>"; };
 		AA82C4191E9807F60052F02D /* Home+Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home+Setting.swift"; sourceTree = "<group>"; };
 		AA91B9EA1EA96919000C77A0 /* ScheduleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionCell.swift; sourceTree = "<group>"; };
+		AA9AE3B41EAC16E400099EE5 /* Home + Login_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home + Login_Extension.swift"; sourceTree = "<group>"; };
 		AAF116C61E92A50A00665B6F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
 		AAF116CA1E92AED400665B6F /* DetailCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				AA82C4171E98075C0052F02D /* HomeExtension.swift */,
 				AA82C4191E9807F60052F02D /* Home+Setting.swift */,
 				AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */,
+				AA9AE3B41EAC16E400099EE5 /* Home + Login_Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				AAF116C91E92AE4900665B6F /* DetailCategoryViewController.swift in Sources */,
 				AA58B74D1E972DD200E5E0E5 /* ScheduleCell.swift in Sources */,
 				AA58B74F1E97323500E5E0E5 /* CategoriesCell.swift in Sources */,
+				AA9AE3B51EAC16E400099EE5 /* Home + Login_Extension.swift in Sources */,
 				AA2BB0B81E91D7A800128148 /* Helper.swift in Sources */,
 				AA558D551E9C1B7A0045E28D /* WeekdayCell.swift in Sources */,
 				AAF116C71E92A50A00665B6F /* CategoryCell.swift in Sources */,

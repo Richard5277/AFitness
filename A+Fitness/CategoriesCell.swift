@@ -75,11 +75,11 @@ class CategoriesCell: BaseCollectionVewCell, UICollectionViewDataSource, UIColle
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.homeViewController?.arrowView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.8)
+        self.homeViewController?.arrowView.backgroundColor = UIColor(r: 233, g: 208, b: 56, a: 0.8)
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        self.homeViewController?.arrowView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.2)
+        self.homeViewController?.arrowView.backgroundColor = UIColor(r: 233, g: 208, b: 56, a: 0.2)
     }
     
 }

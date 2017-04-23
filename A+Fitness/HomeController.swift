@@ -8,8 +8,31 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, DidChangeUserDelegate {
+    
+    let ref = FIRDatabase.database().reference()
+    
+    var user: User?{
+        didSet{
+            print("User Set")
+            self.userPotfolioImageView.loadImageUsingCacheWithUrlString(urlString: (user?.profileImageUrl)!)
+        }
+    }
+    
+    let userPotfolioImageView = UIImageView()
+    
+    func didChangeUserWithUid(_ uid: String) {
+        print("Did Change User")
+        FIRDatabase.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapShot) in
+            if let dictionary = snapShot.value as? [String: AnyObject] {
+                let  user = User()
+                user.setValuesForKeys(dictionary)
+                self.user = user
+            }
+        }, withCancel: nil)
+    }
     
     let categoriesCellId = "categoriesCellId"
     let scheduleCellId = "scheduleCellId"
@@ -26,7 +49,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     let arrowView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.2)
+        view.backgroundColor = UIColor(r: 233, g: 208, b: 56, a: 0.2)
         view.layer.cornerRadius = 33
         view.layer.masksToBounds = true
         return view
@@ -74,9 +97,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         super.viewDidLoad()
         collectionView?.backgroundColor = myColor.bgBlack
         setUpMenuBar()
-        setUpNavBarButtons()
+//        setUpNavBarButtons()
         setUpCollectionView()
         setUpArrowView()
+        checkLogIn()
+        
+        userPotfolioImageView.backgroundColor = .red
+        let userImage = UIImage(named: "more")?.resizeToWidth(28).withRenderingMode(.alwaysTemplate)
+        self.userPotfolioImageView.image = userImage
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userPotfolioImageView)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -104,9 +133,9 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         self.arrowLeftImageView.alpha = percentage * 2
         
         if percentage < 0.25 {
-            self.arrowView.backgroundColor = UIColor(r: 250, g: 250, b: 250, a: 0.2 + percentage * 3.2)
+            self.arrowView.backgroundColor = UIColor(r: 233, g: 208, b: 56, a: 0.2 + percentage * 3.2) 
         } else {
-            self.arrowView.backgroundColor = UIColor(r: 250, g: 250, b: 250, a: 1.8 - percentage * 3.2)
+            self.arrowView.backgroundColor = UIColor(r: 233, g: 208, b: 56, a: 1.8 - percentage * 3.2)
         }
   
     }

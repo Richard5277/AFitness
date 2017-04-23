@@ -18,6 +18,7 @@ class ScheduleCollectionCell: BaseCollectionVewCell {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = myColor.mainBlack
         label.textAlignment = .left
+        label.textColor = myColor.textWhite
         return label
     }()
     
@@ -26,6 +27,7 @@ class ScheduleCollectionCell: BaseCollectionVewCell {
         label.textColor = myColor.mainBlack
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .right
+        label.textColor = myColor.textWhite
         return label
     }()
     
@@ -33,8 +35,8 @@ class ScheduleCollectionCell: BaseCollectionVewCell {
         let bt = UIButton(type: .system)
         bt.setTitle("Add Exercise", for: .normal)
         bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        bt.titleLabel?.textColor = myColor.textWhite
         bt.addTarget(self, action: #selector(handleAddExercise), for: .touchUpInside)
+        bt.setTitleColor(myColor.textWhite, for: .normal)
         return bt
     }()
 

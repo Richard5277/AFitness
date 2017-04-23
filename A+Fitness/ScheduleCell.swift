@@ -103,7 +103,7 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scheduleCellId, for: indexPath) as! ScheduleCollectionCell
-            cell.backgroundColor = myColor.yellow
+            cell.backgroundColor = myColor.gray
             cell.dayLabel.text = String(dayNumberCollection[indexPath.item])
             return cell
         }
@@ -122,7 +122,7 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             return CGSize(width: (frame.width - 24) / 5, height: 60)
         }
         else{
-           return CGSize(width: frame.width, height: frame.height - 76)
+           return CGSize(width: frame.width, height: frame.height - 66)
         }
     }
     

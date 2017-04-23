@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension HomeController {
     
@@ -67,10 +68,13 @@ extension HomeController {
         let searchImage = UIImage(named: "search")?.resizeToWidth(28).withRenderingMode(.alwaysTemplate)
         let searchButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
         
+        // MARK: change this to user imageview
         let moreImage = UIImage(named: "more")?.resizeToWidth(28).withRenderingMode(.alwaysTemplate)
-        let moreButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
+        // let moreButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
+        self.userPotfolioImageView.image = moreImage
+        let userPotfolioImageItem = UIBarButtonItem(customView: self.userPotfolioImageView)
         
-        navigationItem.rightBarButtonItems = [moreButtonItem,searchButtonItem]
+        navigationItem.rightBarButtonItems = [userPotfolioImageItem,searchButtonItem]
     }
     
     func handleSearch(){
