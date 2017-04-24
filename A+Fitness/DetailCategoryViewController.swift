@@ -12,12 +12,6 @@ import iMaster
 
 class DetailCategoryViewController: UIViewController {
     
-//    let containerView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .purple
-//        return view
-//    }()
-    
     let detailCategoryView: DetailCategoryView = DetailCategoryView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
@@ -37,16 +31,7 @@ class DetailCategoryViewController: UIViewController {
         navigationController?.navigationBar.tintColor = myColor.white
         
     }
-    func setUpView(){
-        
-//        view.addCustomView(containerView)
-//        containerView.snp.makeConstraints { (make) in
-//            make.top.equalToSuperview()
-//            make.right.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//            make.left.equalToSuperview()
-//        }
-        
+    func setUpView(){        
         view.addCustomView(detailCategoryView)
         detailCategoryView.snp.makeConstraints { (mk) in
             mk.top.equalToSuperview()

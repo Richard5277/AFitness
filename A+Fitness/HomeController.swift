@@ -21,7 +21,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
-    let userPotfolioImageView = UIImageView()
+    let userPotfolioImageView = UIImageView(frame: CGRect(x: 100, y: 10, width: 30, height: 30))
     
     func didChangeUserWithUid(_ uid: String) {
         print("Did Change User")
@@ -93,19 +93,19 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return imageView
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        checkLogIn()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = myColor.bgBlack
+                
         setUpMenuBar()
-//        setUpNavBarButtons()
         setUpCollectionView()
         setUpArrowView()
-        checkLogIn()
         
-        userPotfolioImageView.backgroundColor = .red
-        let userImage = UIImage(named: "more")?.resizeToWidth(28).withRenderingMode(.alwaysTemplate)
-        self.userPotfolioImageView.image = userImage
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userPotfolioImageView)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -120,6 +120,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             return categoriesCell
         } else {
             let scheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: scheduleCellId, for: indexPath) as! ScheduleCell
+            scheduleCell.homeViewController = self
             return scheduleCell
         }
     }

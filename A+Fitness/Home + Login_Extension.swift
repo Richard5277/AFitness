@@ -40,8 +40,28 @@ extension HomeController {
                 let user = User()
                 user.setValuesForKeys(dictionary)
                 self.user = user
+                self.setUpNavBarButtonForUser(user: user)
             }
         }, withCancel: nil)
+        
+    }
+    
+    
+    func setUpNavBarButtonForUser(user: User){
+        
+        let userPortfolioImageUrl = user.profileImageUrl
+        userPotfolioImageView.loadImageUsingCacheWithUrlString(urlString: userPortfolioImageUrl!)
+        userPotfolioImageView.layer.cornerRadius = 15
+        userPotfolioImageView.layer.masksToBounds = true
+        userPotfolioImageView.image?.resizeToWidth(30).withRenderingMode(.alwaysTemplate)
+        userPotfolioImageView.isUserInteractionEnabled = true
+        
+        userPotfolioImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMore)))
+        
+        let userBarButtonItem = UIBarButtonItem(customView: userPotfolioImageView)
+        userBarButtonItem.target = self
+        userBarButtonItem.action = #selector(handleMore)
+        self.navigationItem.rightBarButtonItem = userBarButtonItem
         
     }
 

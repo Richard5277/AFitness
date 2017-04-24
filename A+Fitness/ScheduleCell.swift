@@ -14,7 +14,7 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
     
     let weekdayCellId = "weekdayCellId"
     let scheduleCellId = "scheduleCellId"
-    
+    var homeViewController: HomeController?
     var onceOnly = false
 
     let calendar = Calendar.current
@@ -45,7 +45,11 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
         
         scheduleCollectionView.delegate = self
         scheduleCollectionView.dataSource = self
-        scheduleCollectionView.register(ScheduleCollectionCell.self, forCellWithReuseIdentifier: "scheduleCellId")
+
+        //MARK: Register every cell as a Individual Cell
+        for i in 1...numberOfDaysInThisMonth(){
+            scheduleCollectionView.register(ScheduleCollectionCell.self, forCellWithReuseIdentifier: "scheduleCellId-\(i)")
+        }
 
         
         addCustomView(weekdayCollectionView)
@@ -102,10 +106,14 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
             }
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scheduleCellId, for: indexPath) as! ScheduleCollectionCell
-            cell.backgroundColor = myColor.gray
+            // none-reuseable cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scheduleCellId-\(dayNumberCollection[indexPath.item])", for: indexPath) as! ScheduleCollectionCell
+            cell.homeViewController = self.homeViewController
+            cell.backgroundColor = myColor.lightGray
             cell.dayLabel.text = String(dayNumberCollection[indexPath.item])
+            cell.specialID = dayNumberCollection[indexPath.item]
             return cell
+
         }
     }
     
@@ -162,9 +170,6 @@ class ScheduleCell: BaseCollectionVewCell, UICollectionViewDelegate, UICollectio
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         
         let visibleIndexPath: IndexPath = scheduleCollectionView.indexPathForItem(at: visiblePoint)!
-        
-//        let dayNumber: Int = visibleIndexPath.last!
-//        print(dayNumber)
         
         weekdayCollectionView.scrollToItem(at: visibleIndexPath, at: .centeredHorizontally, animated: true)
         weekdayCollectionView.selectItem(at: visibleIndexPath, animated: true, scrollPosition: .centeredHorizontally)

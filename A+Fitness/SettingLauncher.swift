@@ -28,8 +28,6 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
     let settingCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.3)
-        collectionView.layer.cornerRadius = 12
-        collectionView.layer.masksToBounds = true
         return collectionView
     }()
     
@@ -109,8 +107,6 @@ class SettingLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SettingCell
         cell.setting = settings[indexPath.row]
-        cell.layer.cornerRadius = 12
-        cell.layer.masksToBounds = true
         return cell
     }
     

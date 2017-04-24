@@ -24,6 +24,7 @@
 		AA58B74B1E972CFB00E5E0E5 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74A1E972CFB00E5E0E5 /* SettingCell.swift */; };
 		AA58B74D1E972DD200E5E0E5 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */; };
 		AA58B74F1E97323500E5E0E5 /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58B74E1E97323500E5E0E5 /* CategoriesCell.swift */; };
+		AA5C63AB1EAD808100C76572 /* AddingExerciseLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C63AA1EAD808100C76572 /* AddingExerciseLauncher.swift */; };
 		AA82C4131E97F9320052F02D /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4121E97F9320052F02D /* PieChartView.swift */; };
 		AA82C4161E97FA3A0052F02D /* HomeController+PieChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */; };
 		AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82C4171E98075C0052F02D /* HomeExtension.swift */; };
@@ -59,6 +60,7 @@
 		AA58B74A1E972CFB00E5E0E5 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		AA58B74C1E972DD200E5E0E5 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		AA58B74E1E97323500E5E0E5 /* CategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		AA5C63AA1EAD808100C76572 /* AddingExerciseLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingExerciseLauncher.swift; sourceTree = "<group>"; };
 		AA82C4121E97F9320052F02D /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		AA82C4151E97FA3A0052F02D /* HomeController+PieChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeController+PieChatView.swift"; sourceTree = "<group>"; };
 		AA82C4171E98075C0052F02D /* HomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExtension.swift; sourceTree = "<group>"; };
@@ -158,8 +160,9 @@
 			children = (
 				AA2BB0B51E91D73400128148 /* LoginRegisterViewController.swift */,
 				AA58B7401E9728B600E5E0E5 /* HomeController.swift */,
-				AA58B7481E972BD000E5E0E5 /* SettingLauncher.swift */,
 				AAF116C81E92AE4900665B6F /* DetailCategoryViewController.swift */,
+				AA58B7481E972BD000E5E0E5 /* SettingLauncher.swift */,
+				AA5C63AA1EAD808100C76572 /* AddingExerciseLauncher.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				AA82C4181E98075C0052F02D /* HomeExtension.swift in Sources */,
 				AA58B7471E972A2D00E5E0E5 /* MenuCollectionCell.swift in Sources */,
 				AA58B7491E972BD000E5E0E5 /* SettingLauncher.swift in Sources */,
+				AA5C63AB1EAD808100C76572 /* AddingExerciseLauncher.swift in Sources */,
 				AA58B7411E9728B600E5E0E5 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

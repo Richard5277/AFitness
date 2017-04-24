@@ -10,6 +10,8 @@ import UIKit
 import iMaster
 import Firebase
 
+let windowFrame = UIApplication.shared.keyWindow?.bounds ?? UIWindow().bounds
+
 let imageCache = NSCache<AnyObject, AnyObject>() // <NSString, UIImage>
 
 extension UIImageView {
